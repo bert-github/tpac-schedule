@@ -86,6 +86,6 @@ ones.
 ### calendar-order.js
 
 This JavaScript is linked from the HTML files and contains routines to
-re-sort the lists of events, when the user clicks a corresponding
+re-sort the lists of events, when the user clicks corresponding
 buttons.
 
