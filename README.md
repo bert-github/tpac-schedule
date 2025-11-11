@@ -2,13 +2,13 @@
 
 An entry for the [TPAC 2025 hackathon](https://www.w3.org/events/meetings/a1128bb9-d32d-49b4-9f84-a6378800d73b/).
 
-This is the system that builds the [TPAC schedule
-page](https://www.w3.org/2025/11/TPAC/schedule.html). It includes
-programs (in Bash and Awk) to retrieve events from the W3C group
-calendar, convert the events from iCalendar to HTML fragments, sort
-them and put them in an HTML page. The page provides both a list view
-and a grid view (by means of CSS) and the list views can be sorted in
-different ways (with JavaScript). The result is a
+This is a (slightly modified snapshot of) the system that builds the
+[TPAC schedule page](https://www.w3.org/2025/11/TPAC/schedule.html).
+It includes programs (in Bash and Awk) to retrieve events from the W3C
+group calendar, convert the events from iCalendar to HTML fragments,
+sort them and put them in an HTML page. The page provides both a list
+view and a grid view (by means of CSS) and the list views can be
+sorted in different ways (with JavaScript). The result is a
 [schedule.html](https://bert-github.github.io/tpac-schedule/schedule.html)
 
 In other words: a nightmare :-) But several people manage to use the
