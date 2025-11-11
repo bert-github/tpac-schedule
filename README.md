@@ -1,8 +1,8 @@
 # tpac-schedule
 
-An entry for the TPAC 2025 hackathon.
+An entry for the [TPAC 2025 hackathon](https://www.w3.org/events/meetings/a1128bb9-d32d-49b4-9f84-a6378800d73b/).
 
-This is the system that builds the TPAC schedule page. It includes
+This is the system that builds the [TPAC schedule page](https://www.w3.org/2025/11/TPAC/schedule.html). It includes
 programs (in Bash and Awk) to retrieve events from the W3C group
 calendar, convert the events from iCalendar to HTML fragments, sort
 them and put them in an HTML page. The page provides both a list view
@@ -33,12 +33,12 @@ too.) It's tasks are:
 
 This is an Awk program that reads an iCalendar file, an HTML file and
 possibly other files with extra events or extra information about
-events. (In this directory the extra-events.ics is empty and there are
-not additional files with information.)
+events. (In this repository, the extra-events.ics is empty and there are
+no additional files with information.)
 
-It outputs the HTML file it read, with parts between certain comments
-(&lt;!--begin-include...--&gt; and &lt;!--end-include...--&gt;)
-replaced by the calender entries converted to HTML. The comments a
+It outputs the HTML file it read, with any parts between certain comments
+(<code>&lt;!--begin-include...--&gt;</code> and <code>&lt;!--end-include...--&gt;</code>)
+replaced by the calender entries converted to HTML. The comments indicates a
 time range from which events should be inserted there.
 
 The program also transforms times to the desired time zone (as
@@ -60,27 +60,27 @@ character entities.
 ### schedule.html
 
 This is an HTML file. It contains a complete page, except that there
-are pairs of comments (&lt;!--begin-include...--&gt; and
-&lt;!--end-include...--&gt;) as explained above, where events should
+are pairs of comments (<code>&lt;!--begin-include...--&gt;</code> and
+<code>&lt;!--end-include...--&gt;</code>) as explained above, where events should
 be inserted.
 
 ### coming-up.html
 
-Another HTML file. This one show the possibility of inserting events
+Another HTML file. This one shows the possibility of inserting events
 from a very small, but dynamic interval of time, viz. the next two
 hours.
 
 ### extra-events.ics
 
-Any events that should be added but are not in the W3C groupo calendar
+Any events that should be added but are not in the W3C group calendar
 can be put here.
 
 ### local.css
 
-This CSS files contains the rules that allow the list of events to be
+This CSS file contains the rules that allow the list of events to be
 laid out either as a list (a table, actually, since it uses ‘display:
-table-row’ and related proeprties) and as a grid (using the CSS grid
-properties). The list is shown on narrow screens, the grid in wide
+table-row’ and related properties) or as a grid (using the CSS grid
+properties). The list is shown on narrow screens, the grid on wide
 ones.
 
 ### calendar-order.js
