@@ -27,9 +27,11 @@ header nav:has([src*="w3c-2025"]) {padding: 0 0 0 calc(1rem + 6em)}
 @media (min-width: 46em) {
   header nav:has([src*="w3c-2025"]) {padding: 0 0 0 calc(2rem + 6em)}
 }
+header nav [href="https://www.w3.org/"]:has([src*="w3c-2025"]),
 header nav [href="/"]:has([src*="w3c-2025"]) {position: relative; z-index: 1;
   float: left; padding: 0.3em; border-radius: 0 0 50% 50%;
   margin: 0.5em 0 -4em -6.3em; background: hsl(0,0%,98%)}
+header nav [href="https://www.w3.org/"] img[src*="w3c-2025"],
 header nav [href="/"] img[src*="w3c-2025"] {height: 4.8em; max-width: none;
   vertical-align: bottom}
 
@@ -50,7 +52,9 @@ a[href].videolink:hover {filter: brightness(120%); outline: medium solid}
 /* W3C logo in navigation menu */
 @supports (position: absolute) {
   @media (min-width: 46em) {
+    header nav [href="https://www.w3.org/"],
     header nav [href="/"] {padding-top: 0.5em; padding-bottom: 0.5em}
+    header nav [href="https://www.w3.org/"] img,
     header nav [href="/"] img {height: 2.6em}
   }
 }
