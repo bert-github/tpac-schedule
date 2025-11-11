@@ -1,0 +1,716 @@
+/* Banner. */
+header, .main header {padding: 0; background: #b4b0c9;
+  background: linear-gradient(#b4b0c9, #b4b0c9 70%, #ece9ff 70%, #ece9ff 82%, #e5e3f4 82%, #e5e3f4 ) border-box}
+header hgroup {font-size: 4vw; line-height: 1.1; text-align: center}
+.main header hgroup {/*font-size: 6vw*/} /* Larger on the main page */
+header hgroup h1 {font-size: 100%; margin: 0; padding: 0}
+header hgroup h1 img {display: block; padding: 0.5em 0 0;
+  height: auto; width: 80%; object-fit: contain; margin: 0 auto}
+.main header hgroup h1 img {height: auto; width: 100%}
+header h2, header h3 {font-size: 50%; font-weight: 900;
+  width: 50%; box-sizing: border-box; margin: 1em 0 0 0; padding: 0}
+header h2 {float: left; color: hsl(0,80%,45%); text-align: right;
+  padding-right: 1em;
+  background: radial-gradient(circle at 100% 50%, currentcolor,
+    currentcolor 0.5em, transparent 0.5em)}
+header h3 {float: left; color: hsl(205,80%,30%); text-align: left;
+  padding-left: 1em;
+  background: radial-gradient(circle at 0% 50%, currentcolor,
+    currentcolor 0.5em, transparent 0.5em)}
+.main header h2 {color: hsl(205,80%,30%)} /* Reverse colors on the main page */
+.main header h3 {color: hsl(0,80%,45%)}
+header h1 a:hover, header h1 :visited:hover {opacity: 1; filter: contrast(1.2)}
+
+/* If there is a new W3C logo in the navigation menu, make it big,
+   float left, and let it overlap the banner image. */
+header nav:has([src*="w3c-2025"]) {padding: 0 0 0 calc(1rem + 6em)}
+@media (min-width: 46em) {
+  header nav:has([src*="w3c-2025"]) {padding: 0 0 0 calc(2rem + 6em)}
+}
+header nav [href="/"]:has([src*="w3c-2025"]) {position: relative; z-index: 1;
+  float: left; padding: 0.3em; border-radius: 0 0 50% 50%;
+  margin: 0.5em 0 -4em -6.3em; background: hsl(0,0%,98%)}
+header nav [href="/"] img[src*="w3c-2025"] {height: 4.8em; max-width: none;
+  vertical-align: bottom}
+
+/* Section titles containing subtitles. */
+h1 .subtitle, h2 .subtitle {font-size: 70%; display: block}
+
+/* Video link */
+a.videolink {display: block; margin: 1.2rem 0 0 0;
+  background: #eee 3em 50% / 4em auto no-repeat
+    url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdib3g9IjAgMCA0IDQiIGhlaWdodD0iNCIgd2lkdGg9IjQiPjxjaXJjbGUgZmlsbD0iIzAwMDAwMDY2IiBjeD0iMiIgY3k9IjIiIHI9IjEuNyIvPjxwYXRoIGZpbGw9IiNmZmZmZmY2NiIgZD0iTSAxLjMgMSBsIDIgMSAtMiAxIHoiLz48L3N2Zz4K);
+  padding: 1.2em 1.2em 1.2em 10em; text-decoration: none;
+  position: relative}
+a[href].videolink:hover {filter: brightness(120%); outline: medium solid}
+@media not print {
+  section:nth-of-type(2n+2) a.videolink {background-color: hsl(204,69%,15%)}
+}
+
+/* W3C logo in navigation menu */
+@supports (position: absolute) {
+  @media (min-width: 46em) {
+    header nav [href="/"] {padding-top: 0.5em; padding-bottom: 0.5em}
+    header nav [href="/"] img {height: 2.6em}
+  }
+}
+
+/* A vertical black rule next to a local navigation menu that comes
+   before the heading of the section. */
+@media (min-width: 27em), print {
+  p + nav.small {border-right: 0.3em solid; padding-right: 0.5em;
+    box-sizing: border-box}
+}
+/**/
+
+#sponsors h3 {font-style: normal; font-weight: inherit; font-size: 100%;
+  text-wrap-style: balance; text-align: left; align-self: start}
+
+/* Each category of sponsors in a box (ARTICLE) with a thin border and
+   the category name (H3) in the upper left corner. */
+#sponsors article {display: grid;
+  grid: "a" "b" / 1fr;
+  /*border: thin solid silver; padding: 0.5rem;*/ align-items: center}
+#sponsors article h3 {grid-area: a; margin: 0; padding: 0}
+#sponsors article p {grid-area: b; display: flex; flex-wrap: wrap; gap: 2.5em;
+  justify-content: center; margin: 0; padding: 1.5em}
+#sponsors article img {padding: 0}
+@media (min-width: 27em) {
+  #sponsors article {grid: "a b" / minmax(7em,17%) 1fr; /*padding: 1rem*/}
+  /* Different sizes for different categories of sponsors. */
+  .emerald.sponsors, .network.sponsors {font-size: 2.0736em}
+  .sapphire.sponsors, .network.sponsors {font-size: 1.728em}
+  .gold.sponsors {font-size: 1.44em}
+  .silver.sponsors {font-size: 1.2em}
+  /**/
+}
+@media (min-width: 63em) {
+  #sponsors article {grid: "a b c" / minmax(7em,17%) 1fr minmax(7em,17%)}
+}
+
+/* Inherit default fill color for SVG from context instead of black. */
+svg {fill: currentColor}
+
+/* A list with large icons instead of bullets. The icon must be an IMG
+   or SVG and must be the first child of the LI, or the first child of
+   an A wich is itself the first child of the LI. */
+.with-icons {list-style: none}
+.with-icons > * {clear: left; margin-left: 3em}
+.with-icons > * > img:first-child,
+.with-icons > * > svg:first-child,
+.with-icons > * > a:first-child > img:first-child,
+.with-icons > * > a:first-child > svg:first-child {
+  object-fit: contain; height: 1em;
+  float: left; font-size: 2em; width: 1em; margin: 0 0 0.25em -1.5em}
+
+/* On the venue page, do not reduce the font size in the card, do not
+   increase the font size of the first line, and make the card less
+   tall. */
+#intro .cards > * {font-size: 100%; height: 17em}
+#intro .cards > * > :nth-child(2)::first-line {font-size: 100%}
+@media print {
+  #intro .cards > * > *:nth-child(1) {height: 17em}
+  #intro .cards > * {height: auto; min-height: 17em}
+}
+
+/* class=five-columns transposes a table of up to ten columns (such as the
+   schedule at a glance) when the screen is narrow. Spanned rows or
+   columns are not supported. If transpose.js has already transposed
+   the table, then the class "landscape" will have been replaced by
+   "portrait". The rules below thus only need to apply if the window
+   is narrow and the class "landscape" is still present. (The script
+   transpose.js acts when the window becomes 512px or narrower.)
+*/
+.five-columns {table-layout: fixed; background: none; color: inherit}
+.five-columns td:first-child, #schedule th:first-child {white-space: normal}
+.five-columns td, .five-columns th {height: auto; vertical-align: top;
+  padding: 0}
+.five-columns * + td, .five-columns * + th {
+  border-left: solid 0.5em transparent}
+.five-columns p {margin: 0; padding-bottom: 0.3em}
+.five-columns p + p {padding-top: 0.3em; border-top: 1px solid}
+section:nth-of-type(2n+1) .five-columns b {font-weight: inherit;
+  color: #ad2030}
+.five-columns th {text-align: center}
+@media (max-width: 512px) {
+  .five-columns {table-layout: auto}
+  .five-columns td, .five-columns th {border-width: 1.2rem 0.8rem}
+  .five-columns * + td, .five-columns * + th {border-left: none}
+  @supports (grid: subgrid / subgrid) {
+    .five-columns.landscape {display: grid; gap: 0 0.8rem;
+      grid: auto auto auto auto auto auto auto auto auto auto / auto}
+    .five-columns.landscape thead, .five-columns.landscape tbody {
+      grid-row-start: 1;
+      grid-row-end: -1; display: grid; grid: subgrid / auto;
+      gap: 0 0.8rem}
+    .five-columns.landscape tr {grid-row-start: 1; grid-row-end: -1;
+      display: grid; grid: subgrid / subgrid; gap: 0 0.8rem}
+    .five-columns.landscape td,
+    .five-columns.five-columns.landscape td:nth-child(2),
+    .five-columns.landscape th {border: none}
+    .five-columns.landscape th:nth-child(n+2),
+    .five-columns.landscape td:nth-child(n+2) {padding-top: 1.2rem}
+  }
+}
+
+/* Blockquote elements on health.html */
+blockquote {margin-left: 1em; margin-right: 0; font-style: italic}
+@media (min-width: 46em) {blockquote {margin-left: 3em}}
+blockquote h4 {font-weight: normal}
+
+/* If the first element on a card is not an image, but an A element
+   with an image inside, the image is stretched like the A element. */
+.cards > * > a:first-child > img {display: block; width: 100%; height: 100%}
+
+/* On the health.html page, the card images should be shown in full. */
+#test-centers .cards > * > a:first-child > img {object-fit: contain;
+  padding: 1em; box-sizing: border-box}
+
+/* Note in smaller font */
+.note {font-size: smaller}
+
+/* The schedules on the schedule.html page have a class of calendar,
+   to create a 2D calendar view on wide screens and a simple list on
+   smaller screens. */
+.calendar:empty::before {content: "[No events]"}
+.calendar {hyphens: auto; display: table; width: 100%}
+.calendar > br {display: none}
+.calendar > a {display: table-row; text-decoration: none;
+  break-inside: avoid}
+.calendar > a:hover {text-decoration: underline; text-decoration-style: dotted}
+.calendar > a::before {content: "▶"; content: "▶" / "";
+  display: table-cell; width: 1em;
+  padding: 0 0.5em 0 0; font-family: iconmonstr-iconic-font, sans-serif;
+  font-size-adjust: none; line-height: 1; font-style: normal;
+  text-indent: 0; text-rendering: auto}
+.calendar.full > .meeting::before {content: '\e092'; content: '\e092' / ''}
+.calendar.full > .online::before {content: '\e06d'; content: '\e06d' / ''}
+.calendar.full > .special::before {content: '\e083'; content: '\e083' / ''}
+.calendar.full > .joint::before {content: '\e07d'; content: '\e07d' / ''}
+.calendar.full > .breakout::before {content: '\e081'; content: '\e081' / ''}
+.calendar.full > .tentative::before {content: '\e04a'; content: '\e04a'/''}
+.calendar > a > span {display: table-cell; white-space: nowrap; width: 7.5em;
+  padding-left: 1em}
+.calendar > a > em {font-style: inherit}
+.calendar > b, .calendar > time, .calendar > i {display: none}
+.calendar > a abbr {display: table-cell}
+.calendar > a abbr::before, abbr.legend::before {font-size: 85%; line-height: 1;
+  background: red; color: #fff; padding: 0.2em; border-radius: 0.7em;
+  display: inline-block; min-width: 1em; text-align: center}
+.calendar > a abbr::before {margin-right: 0}
+.calendar abbr.picto::before {margin-right: 0;
+  /*font-size-adjust: none /* 1.0 causes different effects in different FF? */}
+.calendar hr {margin: 1em 0}
+
+@media screen and not (min-width: 87em), print and not (min-width: 100cm) {
+  .if-big {display: none !important} /* Only show on big screens */
+  /* On the schedule page, the second calendar in each section contains
+     only breakouts, while the first calendar contains all events. The
+     second calendar has class=if-small, so it only shows on small
+     screens. We suppress the breakouts from the first calendar while
+     we're in small-screen mode. */
+  .schedule_page .calendar:not(.if-small) > .breakout {display: none}
+}
+@media screen and (min-width: 87em), print and (min-width: 100cm) {
+  .if-small {display: none !important} /* Only show on small screens */
+  .calendar.full {display: grid; box-sizing: border-box; width: 100%;
+    grid-template-columns: auto; grid-auto-columns: 1fr;
+    grid-template-rows: auto; grid-auto-rows: 1.1em;
+    gap: 1px; background: #ddd; border: thin solid;
+    overflow-wrap: anywhere; page-break-inside: avoid;
+    width: calc(100vw - 4rem - 15px); /* Estimated scrollbar 15px */
+    margin-left: calc((100% - (100vw - 4rem - 15px))/2);
+    reading-flow: grid-rows; /* experimental property */
+    line-height: 1.05; font-size: 90%}
+  .calendar.full > time, .calendar.full > b, .calendar.full > i {display: block;
+    padding: 0.2em; z-index: auto}
+  .calendar.full > b {text-align: center}
+  .calendar.full > time {font-size: 80%}
+  .calendar.full > a {display: flex; flex-direction: column;
+    margin: 0.1em; /*border: 1px solid;*/
+    width: auto; padding: 0.2em; /*border-top: none;*/
+    text-decoration: none; /*box-shadow: 0 1px 0.1em #444;*/ position: relative;
+    /*border-radius: 0.2em*/}
+   /* Remove the icon before the entry and add it at the end instead. */
+  .calendar.full.full > a::before {content: none}
+  .calendar.full span::after {font-family: iconmonstr-iconic-font, sans-serif;
+    font-size-adjust: none; line-height: 1; font-style: normal;
+    text-indent: 0; text-rendering: auto;
+    flex: auto 0 100 /* may shrink to nothing */; overflow: hidden}
+  .calendar.full > .meeting > span::after {
+    content: ' \e092'; content: ' \e092' / ''}
+  .calendar.full > .online > span::after {
+    content: ' \e06d'; content: ' \e06d' / ''}
+  .calendar.full > .special > span::after {
+    content: ' \e083'; content: ' \e083' / ''}
+  .calendar.full > .joint > span::after {
+    content: ' \e07d'; content: ' \e07d' / ''}
+  .calendar.full > .breakout > span::after {
+    content: ' \e081'; content: ' \e081' / ''}
+  span.legend {padding: 0.1em 0.5em; border-radius: 0.65em}
+  .calendar.full > a, .legend {
+    background: hsl(204, 20%, 90%)}
+  .calendar.full > .online, .legend.online {
+    background: hsla(60,100%,92%,1.0)}
+  .calendar.full > .special, .legend.special {
+    background: hsla(190,100%,93%,1.0)}
+  .calendar.full > .tentative, .legend.tentative {
+    background: hsla(20,100%,90%,1.0)}
+  .calendar.full > .canceled, .legend.canceled {
+    background: hsla(204,10%,90%)}
+  .calendar.full > .joint, .legend.joint {
+    background: hsla(270,100%,92%,1.0)}
+  .calendar.full > .breakout, .legend.breakout {
+    background: hsla(90,100%,88%,1.0)}
+  .calendar.full > a > i, .calendar.full > a > em, .calendar.full > hr {
+    position: absolute; overflow: hidden;
+    width: 0; height: 0; overflow-wrap: normal}
+  .calendar.full > a > span {width: auto; padding: 0;
+    flex: auto 0 100 /* may shrink to nothing */; overflow: hidden;
+    white-space: normal} /* The time */
+  .calendar.full > a > b {flex: auto 0 1; overflow: hidden;
+    block-ellipsis: auto /* experimental property */} /* The event title */
+
+  /* TODO: More than three ABBR elements in an event. */
+  .calendar.full > a abbr {position: absolute; top: -0.4em; right: -0.3em;
+    margin: 0}
+  .calendar.full > a abbr + abbr {right: 1.1em}
+  .calendar.full > a abbr + abbr + abbr {right: 2.5em}
+
+  .calendar.full > a[href]:hover, .calendar.full > a[href]:focus {
+    outline: none; z-index: 62; margin: -2.1rem;
+    box-shadow: 0 0.25em 0.5em #444; font-size: 111%; top: 1.8rem}
+  section:nth-of-type(2n+2) .calendar.full > a[href]:hover,
+  section:nth-of-type(2n+2) .calendar.full > a[href]:focus {
+    box-shadow: 0 0.25em 0.5em #000}
+  .calendar.full > a[href] {transition: 0.2s margin, 0.2s top; contain: layout;
+    contain: style layout; top: 0}
+
+  .sortorder {position: absolute; width: 0; height: 0; overflow: hidden;
+    clip-path: inset(0 0 0 100%)}
+
+   /* Breakouts also get the text "[breakout]" after the title. */
+  .calendar.full > .breakout > b::after {content: " [breakout]"}
+
+  .r01 {grid-row-start: 1; z-index: 1}
+  .r02 {grid-row-start: 2; z-index: 2}
+  .r03 {grid-row-start: 3; z-index: 3}
+  .r04 {grid-row-start: 4; z-index: 4}
+  .r05 {grid-row-start: 5; z-index: 5}
+  .r06 {grid-row-start: 6; z-index: 6}
+  .r07 {grid-row-start: 7; z-index: 7}
+  .r08 {grid-row-start: 8; z-index: 8}
+  .r09 {grid-row-start: 9; z-index: 9}
+  .r10 {grid-row-start: 10; z-index: 10}
+  .r11 {grid-row-start: 11; z-index: 11}
+  .r12 {grid-row-start: 12; z-index: 12}
+  .r13 {grid-row-start: 13; z-index: 13}
+  .r14 {grid-row-start: 14; z-index: 14}
+  .r15 {grid-row-start: 15; z-index: 15}
+  .r16 {grid-row-start: 16; z-index: 16}
+  .r17 {grid-row-start: 17; z-index: 17}
+  .r18 {grid-row-start: 18; z-index: 18}
+  .r19 {grid-row-start: 19; z-index: 19}
+  .r20 {grid-row-start: 20; z-index: 20}
+  .r21 {grid-row-start: 21; z-index: 21}
+  .r22 {grid-row-start: 22; z-index: 22}
+  .r23 {grid-row-start: 23; z-index: 23}
+  .r24 {grid-row-start: 24; z-index: 24}
+  .r25 {grid-row-start: 25; z-index: 25}
+  .r26 {grid-row-start: 26; z-index: 26}
+  .r27 {grid-row-start: 27; z-index: 27}
+  .r28 {grid-row-start: 28; z-index: 28}
+  .r29 {grid-row-start: 29; z-index: 29}
+  .r30 {grid-row-start: 30; z-index: 30}
+  .r31 {grid-row-start: 31; z-index: 31}
+  .r32 {grid-row-start: 32; z-index: 32}
+  .r33 {grid-row-start: 33; z-index: 33}
+  .r34 {grid-row-start: 34; z-index: 34}
+  .r35 {grid-row-start: 35; z-index: 35}
+  .r36 {grid-row-start: 36; z-index: 36}
+  .r37 {grid-row-start: 37; z-index: 37}
+  .r38 {grid-row-start: 38; z-index: 38}
+  .r39 {grid-row-start: 39; z-index: 39}
+  .r40 {grid-row-start: 40; z-index: 40}
+  .r41 {grid-row-start: 41; z-index: 41}
+  .r42 {grid-row-start: 42; z-index: 42}
+  .r43 {grid-row-start: 43; z-index: 43}
+  .r44 {grid-row-start: 44; z-index: 44}
+  .r45 {grid-row-start: 45; z-index: 45}
+  .r46 {grid-row-start: 46; z-index: 46}
+  .r47 {grid-row-start: 47; z-index: 47}
+  .r48 {grid-row-start: 48; z-index: 48}
+  .r49 {grid-row-start: 49; z-index: 49}
+  .r50 {grid-row-start: 50; z-index: 50}
+  .r51 {grid-row-start: 51; z-index: 51}
+  .r52 {grid-row-start: 52; z-index: 52}
+  .r53 {grid-row-start: 53; z-index: 53}
+  .r54 {grid-row-start: 54; z-index: 54}
+  .r55 {grid-row-start: 55; z-index: 55}
+  .r56 {grid-row-start: 56; z-index: 56}
+  .r57 {grid-row-start: 57; z-index: 57}
+  .r58 {grid-row-start: 58; z-index: 58}
+  .r59 {grid-row-start: 59; z-index: 59}
+  .r60 {grid-row-start: 60; z-index: 60}
+  .r61 {grid-row-start: 61; z-index: 61}
+
+  .c01 {grid-column-start: 1}
+  .c02 {grid-column-start: 2}
+  .c03 {grid-column-start: 3}
+  .c04 {grid-column-start: 4}
+  .c05 {grid-column-start: 5}
+  .c06 {grid-column-start: 6}
+  .c07 {grid-column-start: 7}
+  .c08 {grid-column-start: 8}
+  .c09 {grid-column-start: 9}
+  .c10 {grid-column-start: 10}
+  .c11 {grid-column-start: 11}
+  .c12 {grid-column-start: 12}
+  .c13 {grid-column-start: 13}
+  .c14 {grid-column-start: 14}
+  .c15 {grid-column-start: 15}
+  .c16 {grid-column-start: 16}
+  .c17 {grid-column-start: 17}
+  .c18 {grid-column-start: 18}
+  .c19 {grid-column-start: 19}
+  .c20 {grid-column-start: 20}
+  .c21 {grid-column-start: 21}
+  .c22 {grid-column-start: 22}
+  .c23 {grid-column-start: 23}
+  .c24 {grid-column-start: 24}
+  .c25 {grid-column-start: 25}
+  .c26 {grid-column-start: 26}
+  .c27 {grid-column-start: 27}
+  .c28 {grid-column-start: 28}
+  .c29 {grid-column-start: 29}
+  .c30 {grid-column-start: 30}
+  .c31 {grid-column-start: 31}
+  .c32 {grid-column-start: 32}
+  .c33 {grid-column-start: 33}
+  .c34 {grid-column-start: 34}
+  .c35 {grid-column-start: 35}
+  .c36 {grid-column-start: 36}
+  .c37 {grid-column-start: 37}
+  .c38 {grid-column-start: 38}
+  .c39 {grid-column-start: 39}
+  .c40 {grid-column-start: 40}
+  .c41 {grid-column-start: 41}
+  .c42 {grid-column-start: 42}
+  .c43 {grid-column-start: 43}
+  .c44 {grid-column-start: 44}
+  .c45 {grid-column-start: 45}
+  .c46 {grid-column-start: 46}
+  .c47 {grid-column-start: 47}
+  .c48 {grid-column-start: 48}
+  .c49 {grid-column-start: 49}
+  .c50 {grid-column-start: 50}
+  .c51 {grid-column-start: 51}
+  .c52 {grid-column-start: 52}
+  .c53 {grid-column-start: 53}
+  .c54 {grid-column-start: 54}
+  .c55 {grid-column-start: 55}
+  .c56 {grid-column-start: 56}
+  .c57 {grid-column-start: 57}
+  .c58 {grid-column-start: 58}
+  .c59 {grid-column-start: 59}
+  .c60 {grid-column-start: 60}
+  .c61 {grid-column-start: 61}
+
+  .h00 {grid-row-end: span 0}
+  .h01 {grid-row-end: span 1}
+  .h02 {grid-row-end: span 2}
+  .h03 {grid-row-end: span 3}
+  .h04 {grid-row-end: span 4}
+  .h05 {grid-row-end: span 5}
+  .h06 {grid-row-end: span 6}
+  .h07 {grid-row-end: span 7}
+  .h08 {grid-row-end: span 8}
+  .h09 {grid-row-end: span 9}
+  .h10 {grid-row-end: span 10}
+  .h11 {grid-row-end: span 11}
+  .h12 {grid-row-end: span 12}
+  .h13 {grid-row-end: span 13}
+  .h14 {grid-row-end: span 14}
+  .h15 {grid-row-end: span 15}
+  .h16 {grid-row-end: span 16}
+  .h17 {grid-row-end: span 17}
+  .h18 {grid-row-end: span 18}
+  .h19 {grid-row-end: span 19}
+  .h20 {grid-row-end: span 20}
+  .h21 {grid-row-end: span 21}
+  .h22 {grid-row-end: span 22}
+  .h23 {grid-row-end: span 23}
+  .h24 {grid-row-end: span 24}
+  .h25 {grid-row-end: span 25}
+  .h26 {grid-row-end: span 26}
+  .h27 {grid-row-end: span 27}
+  .h28 {grid-row-end: span 28}
+  .h29 {grid-row-end: span 29}
+  .h30 {grid-row-end: span 30}
+  .h31 {grid-row-end: span 31}
+  .h32 {grid-row-end: span 32}
+  .h33 {grid-row-end: span 33}
+  .h34 {grid-row-end: span 34}
+  .h35 {grid-row-end: span 35}
+  .h36 {grid-row-end: span 36}
+  .h37 {grid-row-end: span 37}
+  .h38 {grid-row-end: span 38}
+  .h39 {grid-row-end: span 39}
+  .h40 {grid-row-end: span 40}
+  .h41 {grid-row-end: span 41}
+  .h42 {grid-row-end: span 42}
+  .h43 {grid-row-end: span 43}
+  .h44 {grid-row-end: span 44}
+  .h45 {grid-row-end: span 45}
+  .h46 {grid-row-end: span 46}
+  .h47 {grid-row-end: span 47}
+  .h48 {grid-row-end: span 48}
+  .h49 {grid-row-end: span 49}
+  .h50 {grid-row-end: span 50}
+  .h51 {grid-row-end: span 51}
+  .h52 {grid-row-end: span 52}
+  .h53 {grid-row-end: span 53}
+  .h54 {grid-row-end: span 54}
+  .h55 {grid-row-end: span 55}
+  .h56 {grid-row-end: span 56}
+  .h57 {grid-row-end: span 57}
+  .h58 {grid-row-end: span 58}
+  .h59 {grid-row-end: span 59}
+  .h60 {grid-row-end: span 60}
+  .h61 {grid-row-end: span 61}
+}
+@media screen and (min-width: 150em) {
+  .calendar.full {font-size: 100%}
+}
+@media screen and (min-width: 87em) {
+  section:nth-of-type(2n+2) .calendar.full {background: hsl(204, 67%, 30%)}
+  .calendar.full > time, .calendar.full > b, .calendar.full > i {background: hsl(0, 0%, 98%)}
+  section:nth-of-type(2n+2) .calendar.full > time,
+  section:nth-of-type(2n+2) .calendar.full > b,
+  section:nth-of-type(2n+2) .calendar.full > i {background: #103852}
+  section:nth-of-type(2n+2) .calendar.full > a,
+  section:nth-of-type(2n+2) .legend {
+    background: hsl(204, 67%, 32%)}
+  section:nth-of-type(2n+2) .calendar.full > .online,
+  section:nth-of-type(2n+2) .legend.online {
+    background: hsla(60,100%,15%,1.0)}
+  section:nth-of-type(2n+2) .calendar.full > .special,
+  section:nth-of-type(2n+2) .legend.special {
+    background: hsla(190,100%,15%,1.0)}
+  section:nth-of-type(2n+2) .calendar.full > .tentative,
+  section:nth-of-type(2n+2) .legend.tentative {
+    background: hsla(20,100%,25%,1.0)}
+  section:nth-of-type(2n+2) .calendar.full > .canceled,
+  section:nth-of-type(2n+2) .legend.canceled {
+    background: hsla(204,10%,90%)}
+  section:nth-of-type(2n+2) .calendar.full > .joint,
+  section:nth-of-type(2n+2) .legend.joint {
+    background: hsla(270,100%,27%,1.0)}
+  section:nth-of-type(2n+2) .calendar.full > .breakout,
+  section:nth-of-type(2n+2) .legend.breakout {
+    background: hsla(90,100%,21%,1.0)}
+}
+@page schedule-page {
+  @bottom-right {content:none}
+  @bottom-left {content:none}
+}
+@media print {
+  .schedule_page {font-size: 2.11vmin; page: schedule-page}
+  .schedule_page section, section.schedule_page {page-break-after: always;
+    break-after: always;
+    border: none; max-width: none; columns: 29em; column-gap: 2em}
+  .schedule_page section h2, section.schedule_page h2 {
+    font-size: 1.5em} /* Slightly smaller */
+  .schedule_page #map, .schedule_page #map2 {columns: 1}
+  .calendar.full > time, .calendar.full > b, .calendar.full > i {
+    background: #fff}
+  select {display: inline; border: none; background: none; font: inherit}
+  summary img {float: left; margin: 0 0.5em 0 0; height: 2.1em} /* W3C logo */
+  .corner {float: right; margin: -0.5em -0.5em 0 0; height: 6em} /* QR code */
+  .schedule_page h3 {color: #C00}
+}
+@media print and (min-width: 100cm) {
+  .calendar.full {grid-auto-rows: 1.8vmin; /* Trial & error to make it fit */
+    /* font-size: 1.3vmin */}
+  .schedule_page section, section.schedule_page {columns: 1}
+}
+
+/* Class track-calendar is for a short list of A elements with events. */
+.track.calendar {border: thin solid; padding: 0.5em; margin-top: 1.2rem}
+.track.calendar > h3 {margin: 0; /*padding: 0 0 0.5em 0;*/ padding: 0;
+  font-size: 1em}
+.track.calendar abbr, .track.calendar abbr + i {display: none} /* track icon */
+.track.calendar b {font-weight: inherit}
+@media print, screen and (min-width: 87em) {
+  .track.calendar {display: inline grid; width: calc(20% - 0.5em);
+    margin-left: 0; padding: 0; grid-template-rows: 4.6em}
+  .track.calendar > a > em {display: block}
+  .track.calendar > a {/*display: block*/}
+  .track.calendar > h3 {font-size: 1em; padding: 0.2em; font-weight: normal}
+  .track.calendar b {font-weight: bold}
+}
+
+/* Floormaps. */
+#map, #map2 {page-break-before: always; page-break-after: always}
+#map figure, #map2 figure {margin: 2em 1em}
+@media print {
+  #map h2, #map2 h2 {display: none}
+  #map figcaption, #map2 figcaption {color: hsl(0,80%,45%);
+    page-break-inside: avoid}
+  #map img, #map2 img {height: calc(100vh - 5rem); width: 100%;
+    object-fit: contain}
+}
+
+/* Class=blocks (usually combined with class=wide) puts its children
+   in rows, with ample space around each child. Each child is 52rem
+   wide (unless the window is narrower) and, at least within each row,
+   all children have the same height. */
+.blocks:not(:empty) {display: flex; flex-flow: wrap; justify-content: center;
+  gap: 2rem; box-sizing: border-box; padding: 1rem}
+.blocks > * > :first-child {margin-top: 0}
+.blocks > * {flex: 0 0 52rem; max-width: 100%}
+@media (min-width: 63em) {
+  .blocks:not(:empty) {gap: 6rem; padding: 5rem}
+}
+@media print {
+  .blocks:not(:empty) {display: block; text-align: center; padding: 1rem 0}
+  .blocks > * {display: inline-block; vertical-align: top; width: 100%;
+    max-width: 31em; margin: 1em; text-align: left}
+}
+.blocks h2 {font-size: 1.5em}
+
+/* The breakout descriptions are blocks of reversed colors (except in
+   print) with a narrow strip of banner above them.
+   The ABBR elements show an icon with a track label below. */
+.blocks article {page-break-inside: avoid; break-inside: avoid}
+.blocks article > h3 {text-align: right}
+.blocks article abbr {display: inline-block; font-size: 85%;
+  font-weight: bold; text-align: center; margin-right: 0.5em}
+.blocks article abbr::before {font-size: 120%; line-height: 1.2;
+  background: red; color: #fff; padding: 0.2em; border-radius: 0.8em;
+  display: table; margin: 0 auto; min-width: 1.2em; text-align: center}
+.blocks article::before {display: block; content: " "; height: 4em;
+  background: 0 0 / 100% auto url(https://www.w3.org/2025/11/TPAC/images/banner.svg) no-repeat}
+@media not print {
+  .blocks article {background: #103852; color: #fff; padding: 0 1em 1em}
+  .blocks article::before {margin: 0 -1em} /* Compensate the added padding */
+  section:nth-of-type(2n+2) .blocks article {background: hsl(0,0%,98%);
+    color: #222}
+}
+
+/* The breakout descriptions can be the target of a link. Highlight
+   the targeted breakout with an arrow, but only if there is enough
+   space. */
+@media (min-width: 63em) {
+  .blocks article:target {position: relative}
+  .blocks article:target::after {content: "➠"; font-size: 5em;
+    line-height: 0.9; position: absolute; top: 0.8em; left: -1em;
+    width: 1em; text-align: right; color: hsl(0,80%,45%)}
+}
+
+/* On the breakouts.html page, the DL elements are displayed as a
+   table, with the DTs in the left column and the DDs in the right,
+   separated by a vertical rule. The left column is at most 30% of the
+   width and the DTs should thus be short. */
+dd > p:first-child, dd > ul:first-child, dd > ul:first-child > li:first-child,
+dd > ul:first-child > li:first-child > p:first-child {margin-top: 0}
+dd p, dd ul, dd ol {margin: 0}
+dd pre, dd blockquote {margin: 0.65em 0 0.65em 1em}
+dd h1, dd h2, dd h3, dd h4, dd h5, dd h6 {padding: 0; margin: 0.65em 0}
+dl {margin-left: 6em}
+dt {clear: left; float: left; margin: 0 0 0 -6em; box-sizing: border-box;
+  min-width: 6em; padding: 0.3em 0.5em 0.3em 0; text-align: right;
+  text-wrap-style: balance;
+  font-weight: inherit; border-right: 1px solid; padding-right: 0.5em}
+dd {border-left: 1px solid; padding: 0.3em 0 0.3em 0.5em; margin: 0;
+  position: relative; left: -1px} /* Overlap the border */
+@supports (display: grid) {
+  dl {display: grid; grid: "a b" / fit-content(30%) 1fr; margin-left: 0}
+  dt {grid-column: 1; margin: 0; float: none; min-width: 0}
+  dd {grid-column: 2; margin: 0}
+}
+/**/
+
+/* Display the room name in the breakout description in bold and the
+   status, if any, in red. */
+dt.room + dd {font-weight: bold}
+dt.status + dd {font-weight: bold; color: hsl(0,80%,45%);
+  border-color: #222}
+section:nth-of-type(2n+1) dt.status + dd {color: hsla(15,100%,70%,1.0);
+  border-color: #fff}
+
+/* Alternative texts when A DETAILS is open or closed. */
+details:not([open]) .if-open {display: none}
+details[open] .if-closed {display: none}
+
+/* When a list, or part of one, is next to a float, make the whole
+   list a rectangle and don't let list bullets overlap the float. */
+ul, ol {contain: layout}
+ul > li:first-child > :first-child, ol > li:first-child > :first-child {
+  margin-top: 0}
+/**/
+
+/* Remove table layout of "narrow" tables on small screens. */
+@media screen and (max-width: 37em) {
+  section:nth-of-type(2n+2) table.narrow, table.narrow {background: none;
+    color: inherit; font-size: 100%}
+  table.narrow, table.narrow tr, table.narrow tbody {display: block}
+  table.narrow thead {display: none}
+  table.narrow td, table.narrow th, table.narrow p {display: inline;
+    border: none; padding: 0}
+  table.narrow th::after {content: ": "}
+  table.narrow td + td::before {content: " – "}
+  table.narrow p::after {content: " "}
+  table.narrow tr {margin-top: 1.2rem}
+}
+
+/* In print, the sponsor-footer is put at the bottom of the page.
+   (This uses a property specific to Prince.) */
+@media print {
+  .sponsor-footer {-prince-float: page bottom; column-span: all;
+    display: flex; gap: 3.5em;
+    /*border-top: thin solid;*/ margin-top: 0.7em; padding-top: 0.7em;
+    text-align: center; font-size: 0.69em}
+  .sponsor-footer > * {flex: 1 0 0}
+  .sponsor-footer .sponsors {font-size: 1em}
+  .sponsor-footer h3, .sponsor-footer p {margin: 0; padding: 0}
+  .sponsor-footer h3 {font: inherit; font-size: 90%; color: inherit}
+  .sponsor-footer h3::after {content: ": "}
+  .sponsor-footer .sponsors a {}
+  .sponsor-footer img {display: block; margin: 1.35rem auto 0; padding: 0}
+}
+
+/* Classes "light" and "dark" are for images or other elements that
+   only work on a dark, resp. light background. They are suppressed in
+   sections with the wrong background. Example use:
+
+   <img class=dark src="foo-black.png" alt="..."><img class=light
+   src="foo-white.png" alt="...">
+*/
+@media not print {
+  header .light, footer .light, #sponsors .light,
+  section:nth-child(2n+1) .light {display: none}
+  section:nth-child(2n+2) .dark {display: none}
+}
+@media print {
+  .light {display: none}
+}
+
+/* The video pages (see talk-template.tmpl) have a checkbox to make
+   the video player "sticky". */
+#sticky-video, #sticky-video + label {display: none}
+@media screen and (min-height: 50em) {
+  #sticky-video, #sticky-video + label {display: block; float: right}
+  #sticky-video:checked ~ * video {position: sticky; top: 0.5rem; z-index: 1}
+}
+
+/* For the icon that links to a video. */
+.recording {float: right; clear: right; margin: 0 0 0 0.3em}
+.recording + .recording {clear: none}
+.bigger.icon {font-size: 140%}
+
+/* The captions of figure elements in the maps section contain
+   descriptions targeted at assistive technology. * /
+#map figcaption, #map2 figcaption {position: absolute; top: 0; left: 0;
+  clip: rect(0, 0, 0, 0); clip-path: inset(0 0 0 100%)}
+/**/
