@@ -211,6 +211,7 @@ blockquote h4 {font-weight: normal}
      we're in small-screen mode. */
   .schedule_page .calendar:not(.if-small) > .breakout {display: none}
 }
+xb
 @media screen and (min-width: 87em), print and (min-width: 100cm) {
   .if-small {display: none !important} /* Only show on small screens */
   .calendar.full {display: grid; box-sizing: border-box; width: 100%;
